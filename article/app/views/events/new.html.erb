@@ -1,0 +1,28 @@
+<h1> Dein neuer Event </h1>
+
+<p>
+  Was soll es denn sein?</br>
+  <ul>
+    Ein Kochkurs "Wie grille ich Grillen richtig"?</li>
+    Ein Nagellackkurs, mit viel Glitzer und Verzierungen?</li>
+    Oder doch lieber gemütlich zusammen ein Liegevelo schweissen?</li>
+  </ul>
+  Die AWK Mitarbeiter freuen sich auf Deine Events, abgesegnet durch die Geschäftsleitung, versteht sich.
+
+</p>
+
+<%= form_with scope: :article, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

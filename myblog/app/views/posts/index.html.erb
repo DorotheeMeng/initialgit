@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kleini Teggschtli</h1>
+<p>Alli kleine Teggschtli wo n i uff minere Reis durch dSchwiz im letschte Joor do publiziert ha</p>
+<table>
+  <thead>
+    <tr>
+      <th>E Titel</th>
+      <th>Author</th>
+      <th>Teggscht</th>
+      <th>Publikationsdatum</th>
+      <th colspan="30"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.author %></td>
+        <td><%= post.body %></td>
+        <td><%= post.publish_date %></td>
+        <td><%= link_to 'Zeig emol', post %></td>
+        <td><%= link_to 'Andersmache', edit_post_path(post) %></td>
+        <td><%= link_to 'Ewäg mache', post, method: :delete, data: { confirm: 'Bisch sicher?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Neue n Iitrag', new_post_path %>
